@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="Music_player.css">
+</head>
+
+<!-- body -->
+
+<body>
+    <header id="header">
+        <div class="header">
+            <h1>Music Player</h1>
+            <div class="toggle-theme">
+                <input type="checkbox" id="darkModeSwitch">
+                <label for="darkModeSwitch" class="toggle-label">
+                    <span class="toggle-circle"></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- All songs contains all songs list with filter -->
+    <div class="container">
+        <div class="All-songs">
+            <div class="filter">
+                <label>Filter by Genre:</label>
+                <select id="genreselect">
+                    <option value="All">All</option>
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Jazz">Jazz</option>
+                    <option value="Classical">Classical</option>
+                </select>
+            </div>
+            <div>
+                <h2>All Songs</h2>
+                <ul id="song-list">
+                    <li data-src="Shape of you.mp3" data-genre="Pop" data-artist="Ed Sheeran"
+                        data-img-src="Shape of you.jpg">Shape of You</li>
+                    <li data-src="Believer.mp3" data-genre="Rock" data-artist="Imagine Dragons"
+                        data-img-src="Believer.jpg">Believer</li>
+                    <li data-src="Baby Baby.mp3" data-genre="Pop" data-artist="Justin Bieber"
+                        data-img-src="Baby Baby.jpg">Baby Baby</li>
+                    <li data-src="Gangstas paradise.mp3" data-genre="Pop" data-artist="Coolio"
+                        data-img-src="Gangstas paradise.jpg">Gangsta's Paradise</li>
+                    <li data-src="Cheap Thrills.mp3" data-genre="Classical" data-artist="Sia"
+                        data-img-src="Cheap Thrills.jpg">Cheap Thrills</li>
+                    <li data-src="U & I.mp3" data-genre="Jazz" data-artist="Ruben" data-img-src="U & I.jpg">U & I</li>
+                    <li data-src="Summertime Sadness.mp3" data-genre="Rock" data-artist="Lana Del Rey"
+                        data-img-src="Summertime Sadness.jpg">Summertime Sadness</li>
+                    <li data-src="Love me Like.mp3" data-genre="Classical" data-artist="Ellie Goulding"
+                        data-img-src="Love me Like.jpg">Love Me Like</li>
+                    <li data-src="Dusk till Dawn.mp3" data-genre="Jazz" data-artist="Zayn"
+                        data-img-src="Dusk till Dawn.jpg">Dusk Till Dawn</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Song card contains album img controls -->
+
+        <div class="song-card">
+            <div id="image">
+                <img id="song-image" src="Shape of you.jpg" alt="Shape of You">
+                <h2 id="song-title">Shape of You</h2>
+                <h3 id="artist">Ed Sheeran</h3>
+            </div>
+            <audio id="audio-player" controls>
+                <source id="audio-source" src="Shape of you.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="controls">
+                <button onclick="prevSong()" > <= </button>
+                <button onclick="nextSong()"> => </button>
+                <button onclick="addToPlaylist()">Add to Playlist</button>
+            </div>
+        </div>
+
+        <!-- Playlist contains current playlist and new created lists  -->
+        
+        <div class="playlist">
+            <div class="search-container">
+                <input type="text" id="search-bar" placeholder="Create Playlist..." />
+                <button id="createplaylist-button">Create Playlist</button>
+            </div>
+            <div class="current-playlist">
+                <h2>Current Playlist</h2>
+                <ul id="playlist-list"></ul>
+                <button id="clear-btn">Clear Playlist</button>
+            </div>
+        </div>
+    </div>
+    <script src="Music_player.js" defer></script>
+</body>
+
+</html>
